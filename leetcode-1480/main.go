@@ -6,14 +6,10 @@ import "fmt"
 //Return the running sum of nums.
 
 func runningSum(nums []int) []int {
-	if len(nums) == 0 {
-		return []int{}
-	}
-	res := []int{nums[0]}
 	for i := 1; i < len(nums); i++ {
-		res = append(res, res[i-1]+nums[i])
+		nums[i] = nums[i-1] + nums[i]
 	}
-	return res
+	return nums
 }
 
 func main() {
